@@ -7,13 +7,113 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/menu"
+            android:alpha="0.5"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="12dp"/>
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Текущее место"
+                android:textColor="@color/white"
+                />
+            <TextView
+                android:textSize="22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textCity"
+                android:text=""
+                android:textColor="@color/white"/>
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="230dp"
+                android:background="@drawable/clouds"
+                android:id="@+id/mainImage"/>
+
+        </LinearLayout>
+        <TextView
+            android:gravity="center"
+            android:textSize="75dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="307dp"
+            android:textColor="@color/white"
+            android:text="-°"
+            android:id="@+id/textGradusMain"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_background"
+            android:layout_marginTop="435dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:layout_marginTop="9dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/textInfo"
+                    android:layout_marginLeft="75dp"
+                    android:text="Сегодня слабый дождь с 21 до 22 ">
+                </TextView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:alpha="0.3"
+                    android:background="@color/white" /> <!-- Линия -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/daughterPanelForGradus_1"
+                    android:layout_marginBottom="5dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center">
+                        <TextView
+                            android:theme="@style/forButtonsInDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Сейчас"
+                            android:id="@+id/textForPanel_1"/>
+                        <Button
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:id="@+id/imageForPanel_1"
+                            android:background="@drawable/rain"/>
+                        <TextView
+                            android:theme="@style/forButtonsInDay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4°"
+                            android:id="@+id/numberForPanel_1"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
